@@ -11,3 +11,20 @@ previous two numbers in the sequence. The sequence looks like this:
 """
 
 
+user_input = int(raw_input("Enter a number:"))
+
+prevnum = 0
+fibnum = 1
+
+#while user_input> 0:
+    #print user_input,
+   # print fibnum
+   # newnum = prevnum + fibnum
+    #prevnum = fibnum
+    #fibnum = newnum
+   #  user_input -= 1
+for number in range(user_input):
+    print fibnum
+    newnum = prevnum + fibnum
+    prevnum = fibnum
+    fibnum = newnum
