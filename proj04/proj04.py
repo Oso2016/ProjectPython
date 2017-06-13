@@ -14,6 +14,7 @@ paliCheck = []
 original = []
 first_letter = random_string[0]
 rest = random_string[1:]
+rest = rest.lower()
 first2 = first_letter.upper()
 random_string2 = first2 + rest
 random_string = random_string.replace(" ","")
