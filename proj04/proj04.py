@@ -18,6 +18,7 @@ rest = rest.lower()
 first2 = first_letter.upper()
 random_string2 = first2 + rest
 random_string = random_string.replace(" ","")
+random_string = random_string.lower()
 for symbol in random_string:
     original.append(symbol)
 for letter in random_string:
