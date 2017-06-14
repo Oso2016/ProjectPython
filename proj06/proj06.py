@@ -54,6 +54,7 @@ def hangman():
     guess = 6
     alphabet = string.lowercase
     length = len(word)
+    used_letters = []
     print "I picked a word that is " + str(length) + " letters long."
     print alphabet
     for letter in word:
@@ -66,7 +67,9 @@ def hangman():
     while guess > 0:
         guess_input = raw_input("Guess a letter: ")
         guess -= 1
-
+        used_letters.append(guess_input)
+        print "These are the letters you have used:",
+        print used_letters
 
 
 
@@ -81,8 +84,7 @@ def hangman():
                 break
 
         print blank_list
-        if guess > 6:
-            print "You have" + str(guess) + " guesses left."
+
         if guess == 6:
             print "You have 6 guesses left."
         if guess == 5:
