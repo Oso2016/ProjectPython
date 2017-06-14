@@ -76,8 +76,20 @@ def hangman():
                 break
 
         print blank_list
+        if guess == 5:
+            print "You have 5 guesses left."
+        if guess == 4:
+            print "You have 4 guesses left."
+        if guess == 3:
+            print "You have 3 guesses left."
+        if guess == 2:
+            print "You have 2 guesses left."
+        if guess == 1:
+            print "You have 1 guess left."
+
     if guess == 0:
         print "Game over. Play again."
+
 
 
 
