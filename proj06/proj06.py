@@ -40,9 +40,49 @@ def choose_word(wordlist):
 # end of helper code
 # -----------------------------------
 
+
 # actually load the dictionary of words and point to it with 
 # the wordlist variable so that it can be accessed from anywhere
 # in the program
 wordlist = load_words()
 
-# your code begins here!
+#your code begins here!
+def hangman():
+    string_list = []
+    blank_list = []
+    word = choose_word(wordlist)
+    guess = 6
+    alphabet = string.lowercase
+
+    for letter in word:
+        string_list.append(letter)
+        blank_list.append("_")
+
+
+    while guess > 0:
+        guess_input = raw_input("Guess a letter: ")
+        guess -= 1
+
+
+
+
+        for num in range(len(string_list)):
+            if string_list[num] == guess_input:
+                guess += 1
+                blank_list[num] = guess_input
+        if blank_list == string_list:
+                print "You win!! :) "
+                break
+
+        print blank_list
+
+
+
+
+
+
+
+
+    return word
+
+hangman()
