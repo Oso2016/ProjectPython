@@ -53,10 +53,14 @@ def hangman():
     word = choose_word(wordlist)
     guess = 6
     alphabet = string.lowercase
-
+    length = len(word)
+    print "I picked a word that is " + str(length) + " letters long."
+    print alphabet
     for letter in word:
         string_list.append(letter)
         blank_list.append("_")
+
+
 
 
     while guess > 0:
@@ -73,6 +77,7 @@ def hangman():
                 blank_list[num] = guess_input
         if blank_list == string_list:
                 print "You win!! :) "
+                print string_list
                 break
 
         print blank_list
@@ -89,6 +94,7 @@ def hangman():
 
     if guess == 0:
         print "Game over. Play again."
+        print string_list
 
 
 
