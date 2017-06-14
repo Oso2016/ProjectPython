@@ -66,6 +66,7 @@ def hangman():
 
 
 
+
         for num in range(len(string_list)):
             if string_list[num] == guess_input:
                 guess += 1
@@ -75,6 +76,8 @@ def hangman():
                 break
 
         print blank_list
+    if guess == 0:
+        print "Game over. Play again."
 
 
 
