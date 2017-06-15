@@ -61,18 +61,12 @@ def hangman():
         string_list.append(letter)
         blank_list.append("_")
 
-
-
-
     while guess > 0:
         guess_input = raw_input("Guess a letter: ")
         guess -= 1
         used_letters.append(guess_input)
         print "These are the letters you have used:",
         print used_letters
-
-
-
 
         for num in range(len(string_list)):
             if string_list[num] == guess_input:
@@ -101,14 +95,6 @@ def hangman():
     if guess == 0:
         print "Game over. Play again."
         print string_list
-
-
-
-
-
-
-
-
 
     return word
 

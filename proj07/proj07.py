@@ -38,6 +38,7 @@ def load_words():
         wordlist.append(line.strip().lower())
     print "  ", len(wordlist), "words loaded."
     return wordlist
+    check = word_list
 
 def get_frequency_dict(sequence):
     """
@@ -77,8 +78,21 @@ def get_word_score(word, n):
     returns: int >= 0
     """
     # TO DO...
-    
-#
+    points = 0
+    sum = 0
+    for letter in word:
+        if letter in SCRABBLE_LETTER_VALUES:
+            sum += SCRABBLE_LETTER_VALUES[letter]
+    points = sum * len(word)
+    if len(word) == n:
+        points+= 50
+    return points
+
+
+
+
+
+
 # Make sure you understand how this function works and what it does!
 #
 def display_hand(hand):
@@ -146,6 +160,12 @@ def update_hand(hand, word):
     returns: dictionary (string -> int)
     """
     # TO DO ...
+    mod = hand.copy()
+    for letter in word:
+
+        if letter in mod:
+            mod[letter]-= 1
+    return mod
 
 #
 # Problem #3: Test word validity
@@ -161,6 +181,17 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     """
     # TO DO...
+    mod = hand.copy()
+    for letter in word:
+        #print letter
+        if mod.get(letter, 0) > 0:
+            #print "here"
+            mod = update_hand(mod,letter)
+            #print mod
+            #closingment = True
+        else:
+            return False
+    return (word in word_list)
 
 def calculate_handlen(hand):
     handlen = 0
@@ -228,3 +259,4 @@ def play_game(word_list):
 if __name__ == '__main__':
     word_list = load_words()
     play_game(word_list)
+
