@@ -277,14 +277,15 @@ def play_game(word_list):
         word = raw_input("Do you want to replay(r), play a new game(n), or exit(e)? ")
         if word == "n":
             deal_hand(HAND_SIZE)
-            display_hand(hand)
+
         elif word == "e":
             print "Game over."
+            endgame += 1
         elif word == "r":
             play_hand(hand,word_list)
         else:
             print "Invalid."
-        endgame += 1
+            endgame += 1
 
 
 
