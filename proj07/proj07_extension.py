@@ -23,7 +23,7 @@ def comp_choose_word(hand, word_list):
     word_list: list (string)
     """
     # TO DO...
-    comphand = deal_hand(HAND_SIZE)
+
 
 
 #
