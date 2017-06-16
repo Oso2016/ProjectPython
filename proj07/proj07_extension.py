@@ -24,6 +24,7 @@ def comp_choose_word(hand, word_list):
     """
     # TO DO...
 
+
 #
 # Problem #6B: Computer plays a hand
 #

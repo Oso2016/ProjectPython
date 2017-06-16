@@ -189,6 +189,9 @@ def is_valid_word(word, hand, word_list):
             mod = update_hand(mod,letter)
             #print mod
             #closingment = True
+        if word not in word_list:
+            print "your word is invalid"
+            return False
         else:
             print "your word is invalid"
             return False
