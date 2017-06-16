@@ -190,6 +190,7 @@ def is_valid_word(word, hand, word_list):
             #print mod
             #closingment = True
         else:
+            print "your word is invalid"
             return False
     return (word in word_list)
 
@@ -240,7 +241,7 @@ def play_hand(hand, word_list):
             hand = update_hand(hand, word)
             print " Your score is " + str(get_word_score(word,HAND_SIZE))
             total += get_word_score(word, HAND_SIZE)
-            display_hand(hand)
+            #display_hand(hand)
         if word == ".":
             print "Game over."
             break
